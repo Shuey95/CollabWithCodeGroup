@@ -1,5 +1,7 @@
 //lets code some cool shit together
 //#interactive #rules
+//brainstorm --- 3 classes that interact with each other
+
 
 float x;
 float y;
