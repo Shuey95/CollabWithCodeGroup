@@ -1,5 +1,5 @@
-
 //lets code some cool shit together
+//#interactive #rules
 
 void setup() {
 
