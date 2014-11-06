@@ -88,6 +88,8 @@ class Ball {
     for (int i=0;i < ball.length; i++) {
       if (id !=i) {
         if ((dist(x, y, ball[i].x, ball[i].y)<40) && (dist(x, y, mouseX, mouseY)<110)) {
+          stroke(222);
+          strokeWeight(.1f);
           line(ball[i].x, ball[i].y, x, y);
         }
       }
