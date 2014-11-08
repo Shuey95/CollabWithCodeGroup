@@ -1,5 +1,10 @@
 ///http://www.openprocessing.org/sketch/18807
 //Credits to: Anne/Shu/Caio/Willie
+//minim part of moniterinput
+import ddf.minim.*;
+
+Minim minim;
+AudioInput in;
 
 Ball[] ball;
 int id;
@@ -13,8 +18,13 @@ float noiseScale=0.35;
 void setup() {
 
   size(800, 800, P3D);
+  noStroke();
   smooth();
   frameRate(20);
+  //initialize library
+ minim = new Minim(this);
+ // use the getLineIn method of the Minim object to get an AudioInput
+  in = minim.getLineIn();
 
 
   ball = new Ball[1000];
@@ -28,10 +38,10 @@ void draw() {
 
   rot += accRot;
 
-  background(255, HSB, 5);
+  background(random(80));
   stroke(5);
   fill(random(255));
-
+ 
   for (int i = 3; i<360; i+=20) {
     float x = mouseX + sin(radians(i+rot))*150;
     float y = mouseY + cos(radians(i+rot))*175;
@@ -43,6 +53,7 @@ void draw() {
     ball[j].intersection();
     ball[j].checkCollision();
     ball[j].drawBall();
+   
 
     //Planes
     stroke(height/2, HSB, j); 
